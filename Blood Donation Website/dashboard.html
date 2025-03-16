@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h1>LifeFlow</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="active"><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="donate-blood.html"><i class="fas fa-tint"></i> Donate Blood</a></li>
+                <li><a href="donation-history.html"><i class="fas fa-calendar-alt"></i> Donation History</a></li>
+                <li><a href="community.html"><i class="fas fa-users"></i> Community</a></li>
+                <li><a href="resources.html"><i class="fas fa-info-circle"></i> Resources</a></li>
+            </ul>
+            <div class="logout">
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search donation drives or resources">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-profile">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-info">
+                        <h2>Aman Shah</h2>
+                        <p>Blood Donor</p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="grid-section donor-stats">
+                    <h2>Donor Profile</h2>
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <i class="fas fa-tint"></i>
+                            <div class="stat-details">
+                                <h3>Blood Group</h3>
+                                <p>A+</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-heart"></i>
+                            <div class="stat-details">
+                                <h3>Lives Saved</h3>
+                                <p>12</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-calendar-check"></i>
+                            <div class="stat-details">
+                                <h3>Last Donation</h3>
+                                <p>3 Months Ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-section upcoming-drives">
+                    <h2>Upcoming Donation Drives</h2>
+                    <div class="drives-list">
+                        <div class="drive-card">
+                            <div class="drive-date">
+                                <span class="day">20</span>
+                                <span class="month">Aug</span>
+                            </div>
+                            <div class="drive-details">
+                                <h3>City Hospital Blood Camp</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Central Hospital</p>
+                                <p><i class="fas fa-clock"></i> 9:00 AM - 3:00 PM</p>
+                            </div>
+                            <button class="btn-register">Register</button>
+                        </div>
+                        <div class="drive-card">
+                            <div class="drive-date">
+                                <span class="day">05</span>
+                                <span class="month">Sep</span>
+                            </div>
+                            <div class="drive-details">
+                                <h3>Community Blood Drive</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Community Center</p>
+                                <p><i class="fas fa-clock"></i> 10:00 AM - 2:00 PM</p>
+                            </div>
+                            <button class="btn-register">Register</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-section quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="actions-grid">
+                        <div class="action-card">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Schedule Donation</span>
+                        </div>
+                        <div class="action-card">
+                            <i class="fas fa-file-medical"></i>
+                            <span>Medical History</span>
+                        </div>
+                        <div class="action-card">
+                            <i class="fas fa-award"></i>
+                            <span>Donor Rewards</span>
+                        </div>
+                        <div class="action-card">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Help & Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-section community-impact">
+                    <h2>Community Impact</h2>
+                    <div class="impact-stats">
+                        <div class="impact-card">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h3>Total Donors</h3>
+                                <p>5,420</p>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <i class="fas fa-hand-holding-medical"></i>
+                            <div>
+                                <h3>Lives Saved</h3>
+                                <p>15,670</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-section health-tracker">
+                    <h2>Health Tracker</h2>
+                    <div class="health-grid">
+                        <div class="health-card">
+                            <i class="fas fa-weight"></i>
+                            <div class="health-details">
+                                <h3>Weight</h3>
+                                <p>75 kg</p>
+                            </div>
+                            <button class="btn-update">Update</button>
+                        </div>
+                        <div class="health-card">
+                            <i class="fas fa-heartbeat"></i>
+                            <div class="health-details">
+                                <h3>Heart Rate</h3>
+                                <p>72 bpm</p>
+                            </div>
+                            <button class="btn-update">Update</button>
+                        </div>
+                        <div class="health-card">
+                            <i class="fas fa-vial"></i>
+                            <div class="health-details">
+                                <h3>Last Check-up</h3>
+                                <p>6 Months Ago</p>
+                            </div>
+                            <button class="btn-update">Schedule</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-section donation-history">
+                    <h2>Donation History</h2>
+                    <table class="donation-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Location</th>
+                                <th>Blood Units</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>15 Mar 2025</td>
+                                <td>City Hospital</td>
+                                <td>1 Unit</td>
+                                <td><span class="status-completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>22 Nov 2024</td>
+                                <td>Community Center</td>
+                                <td>1 Unit</td>
+                                <td><span class="status-completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>05 Jul 2024</td>
+                                <td>Red Cross Camp</td>
+                                <td>1 Unit</td>
+                                <td><span class="status-completed">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grid-section educational-resources">
+                    <h2>Blood Donation Resources</h2>
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <i class="fas fa-book-medical"></i>
+                            <div class="resource-details">
+                                <h3>Donation Guidelines</h3>
+                                <p>Learn about blood donation process</p>
+                            </div>
+                            <a href="#" class="btn-resource">Read More</a>
+                        </div>
+                        <div class="resource-card">
+                            <i class="fas fa-notes-medical"></i>
+                            <div class="resource-details">
+                                <h3>Health Requirements</h3>
+                                <p>Eligibility criteria for donors</p>
+                            </div>
+                            <a href="#" class="btn-resource">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

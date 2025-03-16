@@ -1,0 +1,1131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-light: #ecf0f1;
+    --text-color: #2c3e50;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.nav-menu {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.nav-menu li {
+    margin-bottom: 15px;
+}
+
+.nav-menu a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nav-menu a i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.nav-menu li.active a,
+.nav-menu a:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.logout {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.logout a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.logout a:hover {
+    color: var(--secondary-color);
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: var(--white);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--background-light);
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.notifications {
+    position: relative;
+    margin-right: 20px;
+}
+
+.notifications i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 0.7rem;
+}
+
+.user-info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.user-info p {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.grid-section {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.grid-section h2 {
+    border-bottom: 2px solid var(--background-light);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.stats-container, .drives-list, .actions-grid, .impact-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.stat-card, .impact-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--background-light);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.stat-card i, .impact-card i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-right: 15px;
+}
+
+.stat-details h3, .impact-card h3 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.stat-details p, .impact-card p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.drive-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--background-light);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.drive-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.drive-date .day {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.drive-date .month {
+    font-size: 0.8rem;
+}
+
+.drive-details {
+    flex-grow: 1;
+}
+
+.drive-details h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.drive-details p {
+    color: var(--text-color);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.drive-details p i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+.btn-register {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quick-actions {
+    grid-column: span 2;
+}
+
+.actions-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.action-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-light);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.action-card:hover {
+    transform: scale(1.05);
+}
+
+.action-card i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.community-impact {
+    grid-column: span 2;
+}
+
+.impact-stats {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.health-grid, .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.health-card, .resource-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--background-light);
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.health-card i, .resource-card i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-right: 15px;
+}
+
+.health-details h3, .resource-details h3 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.health-details p, .resource-details p {
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+.btn-update, .btn-resource {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-size: 0.8rem;
+    position: absolute;
+    right: 15px;
+}
+
+.btn-update:hover, .btn-resource:hover {
+    background-color: var(--primary-color);
+}
+
+.donation-history {
+    grid-column: span 2;
+}
+
+.donation-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.donation-table th, .donation-table td {
+    border: 1px solid var(--background-light);
+    padding: 10px;
+    text-align: left;
+}
+
+.donation-table thead {
+    background-color: var(--background-light);
+}
+
+.status-completed {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.educational-resources {
+    grid-column: span 2;
+}
+
+.resources-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Donate Blood Page Styles */
+.donate-blood-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.donation-steps {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    background-color: var(--background-light);
+    padding: 15px;
+    border-radius: 5px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.step.active {
+    opacity: 1;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.step-icon {
+    margin-right: 15px;
+    font-size: 2rem;
+}
+
+.step-icon i {
+    color: var(--secondary-color);
+}
+
+.step.active .step-icon i {
+    color: white;
+}
+
+.donation-form-container {
+    flex-grow: 1;
+}
+
+.donation-form {
+    display: none;
+}
+
+.donation-form.active {
+    display: block;
+}
+
+.donation-form h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+.btn-next, .btn-prev, .btn-complete {
+    padding: 10px 15px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.location-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.location-card {
+    border: 1px solid var(--background-light);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+.location-card i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.location-card input[type="radio"] {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Donation History Page Styles */
+.donation-history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.donation-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--background-light);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-right: 20px;
+}
+
+.stat-content h3 {
+    margin-bottom: 5px;
+    color: var(--text-color-dark);
+}
+
+.stat-content p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.donation-records {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.donation-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.donation-table thead {
+    background-color: var(--background-light);
+}
+
+.donation-table th, 
+.donation-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--background-light);
+}
+
+.donation-table th {
+    font-weight: bold;
+    color: var(--text-color-dark);
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.badge.success {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+}
+
+.btn-view {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upcoming-donations {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.upcoming-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-light);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.upcoming-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.upcoming-details i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.btn-reschedule {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Community Page Styles */
+.community-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.community-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.community-feed {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feed-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn-create-post {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-create-post i {
+    font-size: 1rem;
+}
+
+.feed-filters select {
+    padding: 8px;
+    border: 1px solid var(--background-light);
+    border-radius: 5px;
+}
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post {
+    border: 1px solid var(--background-light);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.post-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.post-info h3 {
+    margin: 0;
+    color: var(--text-color-dark);
+}
+
+.post-info p {
+    margin: 0;
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+}
+
+.post-content {
+    margin-bottom: 15px;
+}
+
+.post-content p {
+    margin-bottom: 10px;
+}
+
+.post-content .post-image {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.post-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.post-actions button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+
+.post-actions button:hover {
+    color: var(--secondary-color);
+}
+
+.upcoming-events {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.events-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.event-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--background-light);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+    background-color: var(--background-light);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.event-date .day {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.event-date .month {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--text-color-light);
+}
+
+.event-details h3 {
+    margin: 0 0 5px 0;
+    color: var(--text-color-dark);
+}
+
+.event-details p {
+    margin: 0 0 10px 0;
+    color: var(--text-color-light);
+}
+
+.event-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-join, .btn-details {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-join {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-details {
+    background-color: var(--background-light);
+    color: var(--text-color-dark);
+}
+
+/* Resources Page Styles */
+.resources-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.resources-search {
+    display: flex;
+    gap: 10px;
+}
+
+.resources-search input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--background-light);
+    border-radius: 5px;
+}
+
+.resources-search button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.resources-categories {
+    background-color: var(--background-light);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.category-tabs {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.category-tabs button {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: var(--text-color-light);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.category-tabs button.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.resource-card {
+    background-color: white;
+    border: 1px solid var(--background-light);
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resource-icon {
+    background-color: var(--background-light);
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resource-icon i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.resource-content h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-color-dark);
+}
+
+.resource-content p {
+    margin: 0 0 15px 0;
+    color: var(--text-color-light);
+}
+
+.btn-view-resource {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.featured-resources {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.featured-card {
+    border: 1px solid var(--background-light);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.featured-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.featured-content {
+    padding: 15px;
+}
+
+.featured-content h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-color-dark);
+}
+
+.featured-content p {
+    margin: 0 0 15px 0;
+    color: var(--text-color-light);
+}
+
+.btn-register, .btn-download {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions .actions-grid,
+    .impact-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .health-grid,
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .donate-blood-container {
+        flex-direction: column;
+    }
+
+    .donation-steps {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .location-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .donation-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .community-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .events-list {
+        grid-template-columns: 1fr;
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .quick-actions .actions-grid,
+    .impact-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .health-grid,
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .donation-steps {
+        flex-direction: column;
+    }
+
+    .location-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .donation-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .upcoming-card {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .community-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .feed-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .post-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .post-avatar {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .post-actions {
+        justify-content: center;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .category-tabs button {
+        text-align: center;
+        border-bottom: none;
+        border-left: 4px solid transparent;
+    }
+
+    .category-tabs button.active {
+        border-bottom: none;
+        border-left-color: var(--secondary-color);
+    }
+
+    .resource-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .resource-icon {
+        margin-bottom: 15px;
+    }
+}

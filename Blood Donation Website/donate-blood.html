@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Blood - LifeFlow</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h1>LifeFlow</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="active"><a href="donate-blood.html"><i class="fas fa-tint"></i> Donate Blood</a></li>
+                <li><a href="donation-history.html"><i class="fas fa-calendar-alt"></i> Donation History</a></li>
+                <li><a href="community.html"><i class="fas fa-users"></i> Community</a></li>
+                <li><a href="resources.html"><i class="fas fa-info-circle"></i> Resources</a></li>
+            </ul>
+            <div class="logout">
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header>
+                <div class="page-title">
+                    <h1>Donate Blood</h1>
+                </div>
+                <div class="user-profile">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-info">
+                        <h2>Aman Shah</h2>
+                        <p>Blood Donor</p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="donate-blood-container">
+                <div class="donation-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-icon"><i class="fas fa-user-md"></i></div>
+                        <h3>Eligibility Check</h3>
+                        <p>Verify your eligibility to donate blood</p>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-icon"><i class="fas fa-calendar-check"></i></div>
+                        <h3>Schedule Donation</h3>
+                        <p>Choose a convenient donation time</p>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-icon"><i class="fas fa-hospital"></i></div>
+                        <h3>Donation Location</h3>
+                        <p>Select a nearby donation center</p>
+                    </div>
+                </div>
+
+                <div class="donation-form-container">
+                    <div class="donation-form active" id="step1">
+                        <h2>Eligibility Questionnaire</h2>
+                        <form id="eligibilityForm">
+                            <div class="form-group">
+                                <label>Are you between 18-65 years old?</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="age-yes" name="age" value="yes" required>
+                                    <label for="age-yes">Yes</label>
+                                    <input type="radio" id="age-no" name="age" value="no">
+                                    <label for="age-no">No</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Do you weigh at least 50 kg?</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="weight-yes" name="weight" value="yes" required>
+                                    <label for="weight-yes">Yes</label>
+                                    <input type="radio" id="weight-no" name="weight" value="no">
+                                    <label for="weight-no">No</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Have you donated blood in the last 3 months?</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="recent-donation-yes" name="recent-donation" value="yes" required>
+                                    <label for="recent-donation-yes">Yes</label>
+                                    <input type="radio" id="recent-donation-no" name="recent-donation" value="no">
+                                    <label for="recent-donation-no">No</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-next">Next: Schedule Donation</button>
+                        </form>
+                    </div>
+
+                    <div class="donation-form" id="step2">
+                        <h2>Schedule Donation</h2>
+                        <form id="scheduleForm">
+                            <div class="form-group">
+                                <label>Select Preferred Date</label>
+                                <input type="date" id="donation-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Select Preferred Time</label>
+                                <select id="donation-time" required>
+                                    <option value="">Choose a time slot</option>
+                                    <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+                                    <option value="afternoon">Afternoon (12:00 PM - 3:00 PM)</option>
+                                    <option value="evening">Evening (3:00 PM - 6:00 PM)</option>
+                                </select>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-prev">Previous</button>
+                                <button type="submit" class="btn-next">Next: Choose Location</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="donation-form" id="step3">
+                        <h2>Choose Donation Location</h2>
+                        <form id="locationForm">
+                            <div class="location-cards">
+                                <div class="location-card">
+                                    <i class="fas fa-hospital"></i>
+                                    <h3>City Central Hospital</h3>
+                                    <p>123 Main Street, City Center</p>
+                                    <input type="radio" name="location" value="city-central" required>
+                                </div>
+                                <div class="location-card">
+                                    <i class="fas fa-clinic-medical"></i>
+                                    <h3>Community Health Center</h3>
+                                    <p>456 Community Road, Suburb</p>
+                                    <input type="radio" name="location" value="community-center">
+                                </div>
+                                <div class="location-card">
+                                    <i class="fas fa-first-aid"></i>
+                                    <h3>Red Cross Donation Center</h3>
+                                    <p>789 Charity Lane, Downtown</p>
+                                    <input type="radio" name="location" value="red-cross">
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-prev">Previous</button>
+                                <button type="submit" class="btn-complete">Complete Donation Registration</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="donate-blood.js"></script>
+</body>
+</html>
